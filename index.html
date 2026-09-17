@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-contexto="foco">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fokus - Produtividade</title>
+
+    <link rel="shortcut icon" href="./imagens/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Cabeçalho -->
+        <header class="app__header">
+
+            <figure class="app__logo-figure">
+                <img
+                    class="app__logo-image"
+                    src="./imagens/logo.png"
+                    alt="Logo do Fokus">
+            </figure>
+
+        </header>
+
+
+        <!-- Banner -->
+        <section class="app__section-banner-container">
+
+            <div class="app__banner-content">
+
+                <h1 class="app__title">
+                    Otimize sua produtividade,
+                    <br>
+
+                    <strong class="app__title-strong">
+                        mergulhe no que importa.
+                    </strong>
+                </h1>
+
+            </div>
+
+            <figure class="app__image-figure">
+
+                <img
+                    class="app__image"
+                    src="./imagens/foco.png"
+                    alt="Ilustração representando concentração">
+
+            </figure>
+
+        </section>
+
+
+        <!-- Temporizador -->
+        <section class="app__section-card-container">
+
+            <div class="app__card">
+
+                <!-- Modos -->
+                <ul class="app__card-list">
+
+                    <li class="app__card-list-item">
+                        <button
+                            data-contexto="foco"
+                            class="app__card-button app__card-button--foco active">
+                            Foco
+                        </button>
+                    </li>
+
+                    <li class="app__card-list-item">
+                        <button
+                            data-contexto="descanso-curto"
+                            class="app__card-button app__card-button--curto">
+                            Descanso curto
+                        </button>
+                    </li>
+
+                    <li class="app__card-list-item">
+                        <button
+                            data-contexto="descanso-longo"
+                            class="app__card-button app__card-button--longo">
+                            Descanso longo
+                        </button>
+                    </li>
+
+                </ul>
+
+
+                <!-- Timer -->
+                <div
+                    id="timer"
+                    class="app__card-timer">
+                    30:00
+                
+                </div>
+
+
+                <!-- Música -->
+                <ul class="app__card-list music-control">
+
+                    <li class="app__card-list-item">
+                       
+
+                        <label class="toggle">
+
+                            <input
+                                class="toggle-checkbox"
+                                type="checkbox"
+                                id="alternar-musica">
+
+                            <span class="toggle-switch"></span>
+
+                        </label>
+
+                    </li>
+
+                    <li class="app__card-list-item">
+
+                        <label
+                            class="app__card-list-label"
+                            for="alternar-musica">
+
+                            🎵 Música
+
+                        </label>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- Botão principal -->
+                <div class="app__card-primary-button-wrapper">
+
+                    <button
+                        id="start-pause"
+                        class="app__card-primary-button">
+
+                        <span id="button-icon">▶</span>
+
+                        <span id="button-text">
+                            Começar
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Rodapé -->
+        <footer class="app__footer">
+
+            <p class="app__footer-text">
+                Desenvolvido pela Alura e Edson Thiago 🚀
+            </p>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

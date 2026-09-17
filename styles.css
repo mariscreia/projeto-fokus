@@ -1,0 +1,673 @@
+/* ===============================
+   VARIÁVEIS
+================================ */
+
+:root {
+    --color-primary: #123456;
+    --color-secondary: #ffffff;
+    --azul-royal: #144480;
+    --fundo-card-timer: rgba(20, 68, 128, 0.30);
+    --lilas: #b872ff;
+
+    --linear-botoes:
+        linear-gradient(
+            180deg,
+            #b872ff 0%,
+            #144480 100%
+        );
+}
+
+
+/* ===============================
+   TEMAS
+================================ */
+
+[data-contexto="foco"] {
+    --main-bg-color:
+        linear-gradient(
+            180deg,
+            #8b1ff8 0%,
+            #041832 48.44%,
+            #01080e 100%
+        );
+}
+
+[data-contexto="descanso-curto"] {
+    --main-bg-color:
+        linear-gradient(
+            180deg,
+            #0f725c 0%,
+            #041832 48.44%,
+            #01080e 100%
+        );
+}
+
+[data-contexto="descanso-longo"] {
+    --main-bg-color:
+        linear-gradient(
+            180deg,
+            #1875e9 0%,
+            #041832 48.44%,
+            #01080e 100%
+        );
+}
+
+
+/* ===============================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--main-bg-color);
+    min-height: 100vh;
+    font-size: 10px;
+
+    transition: background 0.5s ease;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background: url("./imagens/pattern.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ===============================
+   TÍTULOS
+================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Unbounded", sans-serif;
+}
+
+
+/* ===============================
+   APP
+================================ */
+
+.app {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ===============================
+   LOGO
+================================ */
+
+.app__header {
+    width: 100%;
+}
+
+.app__logo-figure {
+    display: flex;
+    justify-content: center;
+
+    padding: 4rem 0;
+    margin: 0;
+}
+
+.app__logo-image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ===============================
+   BANNER
+================================ */
+
+.app__section-banner-container {
+    width: min(125rem, 94%);
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 6rem;
+}
+
+.app__banner-content {
+    flex: 1;
+}
+
+
+/* ===============================
+   TEXTO GRANDE
+================================ */
+
+.app__title {
+    line-height: 150%;
+
+    font-size: 8rem;
+
+    color: var(--color-secondary);
+
+    font-weight: 200;
+
+    max-width: 75rem;
+
+    margin: 0;
+}
+
+.app__title-strong {
+    font-weight: 600;
+}
+
+
+/* ===============================
+   IMAGEM GRANDE
+================================ */
+
+.app__image-figure {
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+
+    flex: 1;
+}
+
+.app__image {
+    width: 75rem;
+    max-width: 140%;
+    height: auto;
+}
+
+
+/* ===============================
+   CARD
+================================ */
+
+.app__section-card-container {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.app__card {
+    border-radius: 3.5rem;
+
+    border: 0.2rem solid var(--azul-royal);
+
+    background: var(--fundo-card-timer);
+
+    padding: 4rem;
+
+    margin: 9rem 0;
+
+    width: 75rem;
+
+    max-width: 92%;
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* ===============================
+   LISTAS
+================================ */
+
+.app__card-list {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+.app__card-list-item {
+    display: flex;
+    align-items: center;
+}
+
+
+/* ===============================
+   BOTÕES FOCO / DESCANSO
+================================ */
+
+.app__card-button {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 2.4rem;
+
+    font-weight: 500;
+
+    line-height: 150%;
+
+    background: transparent;
+
+    padding: 1.4rem 1.8rem;
+
+    color: var(--color-secondary);
+
+    border: none;
+
+    border-radius: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.app__card-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-3px);
+}
+
+.app__card-button.active {
+    background: var(--azul-royal);
+
+    font-weight: 600;
+}
+
+
+/* ===============================
+   TIMER GRANDE
+================================ */
+
+.app__card-timer {
+    color: var(--color-secondary);
+
+    text-align: center;
+
+    font-family: "Unbounded", sans-serif;
+
+    font-size: 18rem;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    margin: 6rem 0;
+
+    letter-spacing: 0.5rem;
+}
+
+
+/* ===============================
+   MÚSICA
+================================ */
+
+.music-control {
+    margin-top: 1.5rem;
+
+    gap: 2rem;
+}
+
+.app__card-list-label {
+    color: var(--color-secondary);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 2.4rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+/* ===============================
+   BOTÃO PRINCIPAL
+================================ */
+
+.app__card-primary-button-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.app__card-primary-button {
+    padding: 1.8rem 3rem;
+
+    min-width: 22rem;
+
+    color: var(--color-secondary);
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 3.2rem;
+
+    background: var(--linear-botoes);
+
+    margin-top: 3.5rem;
+
+    font-size: 2.4rem;
+
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 1.2rem;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.app__card-primary-button:hover {
+    transform: scale(1.05);
+
+    opacity: 0.9;
+}
+
+.app__card-primary-button:active {
+    transform: scale(0.97);
+}
+
+
+/* ===============================
+   ÍCONE DO BOTÃO
+================================ */
+
+#button-icon {
+    font-size: 2.5rem;
+}
+
+
+/* ===============================
+   BOTÃO DE MÚSICA GRANDE
+================================ */
+
+.toggle {
+    cursor: pointer;
+
+    display: inline-block;
+}
+
+.toggle-switch {
+    display: inline-block;
+
+    background: #777;
+
+    border-radius: 2rem;
+
+    width: 8rem;
+
+    height: 4.4rem;
+
+    position: relative;
+
+    vertical-align: middle;
+
+    transition: background 0.25s ease;
+}
+
+.toggle-switch::before {
+    content: "";
+
+    display: block;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff 0%,
+            #eeeeee 100%
+        );
+
+    border-radius: 50%;
+
+    width: 3.4rem;
+
+    height: 3.4rem;
+
+    position: absolute;
+
+    top: 0.5rem;
+
+    left: 0.5rem;
+
+    transition: left 0.25s ease;
+}
+
+.toggle:hover .toggle-switch::before {
+    background: #ffffff;
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+    background: var(--lilas);
+}
+
+.toggle-checkbox:checked + .toggle-switch::before {
+    left: 4.1rem;
+}
+
+.toggle-checkbox {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+}
+
+
+/* ===============================
+   RODAPÉ
+================================ */
+
+.app__footer {
+    display: flex;
+
+    width: 100%;
+
+    padding: 3rem 6rem;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #010b15;
+
+    margin-top: auto;
+}
+
+.app__footer-text {
+    color: rgba(182, 182, 182, 0.8);
+
+    position: fixed;
+
+    bottom: 20px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family: "Chakra Petch", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+letter-spacing: 1px;
+
+    text-shadow:
+        0 0 8px rgba(0, 212, 255, 0.7),
+        0 0 18px rgba(0, 212, 255, 0.4);
+
+    opacity: 1;
+
+    z-index: 10;
+}
+
+
+/* ===============================
+   TABLETS
+================================ */
+
+@media (max-width: 1024px) {
+
+    .app__section-banner-container {
+        width: 92%;
+
+        gap: 3rem;
+    }
+
+    .app__title {
+        font-size: 5.5rem;
+    }
+
+    .app__image {
+        width: 50rem;
+        max-width: 120%;
+    }
+
+    .app__card-timer {
+        font-size: 12rem;
+    }
+
+    .app__card-button {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* ===============================
+   CELULARES
+================================ */
+
+@media (max-width: 767px) {
+
+    html {
+        font-size: 9px;
+    }
+
+    .app__logo-figure {
+        padding: 2.5rem 0;
+    }
+
+    .app__section-banner-container {
+        width: 90%;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 3rem;
+    }
+
+    .app__title {
+        font-size: 3.5rem;
+
+        max-width: 100%;
+    }
+
+    .app__image {
+        width: 38rem;
+
+        max-width: 90%;
+    }
+
+    .app__card {
+        margin: 5rem 0;
+
+        padding: 2.5rem 1.5rem;
+
+        width: 95%;
+    }
+
+    .app__card-list {
+        flex-wrap: wrap;
+
+        gap: 0.7rem;
+    }
+
+    .app__card-button {
+        font-size: 1.6rem;
+
+        padding: 1rem 1.2rem;
+    }
+
+    .app__card-timer {
+        font-size: 7rem;
+
+        margin: 4rem 0;
+    }
+
+    .app__card-list-label {
+        font-size: 1.8rem;
+    }
+
+    .app__card-primary-button {
+        min-width: 18rem;
+
+        font-size: 2rem;
+    }
+
+    .app__footer {
+        padding: 2rem;
+    }
+}
+
+
+/* ===============================
+   CELULARES PEQUENOS
+================================ */
+
+@media (max-width: 400px) {
+
+    .app__title {
+        font-size: 2.8rem;
+    }
+
+    .app__image {
+        width: 32rem;
+    }
+
+    .app__card-timer {
+        font-size: 5.5rem;
+    }
+
+    .app__card-button {
+        font-size: 1.4rem;
+    }
+
+    .app__card-list-label {
+        font-size: 1.6rem;
+    }
+}
